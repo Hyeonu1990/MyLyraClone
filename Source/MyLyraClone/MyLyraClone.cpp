@@ -2,6 +2,7 @@
 
 #include "MyLyraClone.h"
 #include "Modules/ModuleManager.h"
+#include "System/MyLyraCloneAssetManager.h"
 
 /**
  * FMyLyraCloneGameModule
@@ -16,6 +17,11 @@ class FMyLyraCloneGameModule : public FDefaultGameModuleImpl
 void FMyLyraCloneGameModule::StartupModule()
 {
 	UE_LOG(LogTemp, Warning, TEXT("StartupModule")); // 게임 시작 시 모듈 init 될 때 호출
+
+	// test clone
+	{
+		UMyLyraCloneAssetManager::TestClone();
+	}
 }
 
 void FMyLyraCloneGameModule::ShutdownModule()
